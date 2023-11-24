@@ -1,8 +1,7 @@
 # How to create an Azure Resource Group with with a .NET 8 console application and Azure SDK for .NET 
 
-For general infor about Azure SDK for .NET navigate to the following github repo: 
-
-https://github.com/Azure/azure-sdk-for-net
+**NOTE:**
+For general infor about Azure SDK for .NET navigate to the following github repo: https://github.com/Azure/azure-sdk-for-net
 
 We first create the folder/directory where to place our console applicaton.
 
