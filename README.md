@@ -1,5 +1,9 @@
 # How to create an Azure Resource Group with with a .NET 8 console application and Azure SDK for .NET 
 
+For general infor about Azure SDK for .NET navigate to the following github repo: 
+
+https://github.com/Azure/azure-sdk-for-net
+
 We first create the folder/directory where to place our console applicaton.
 
 ```
@@ -24,13 +28,17 @@ We create a .NET 8 console application with the command:
 dotnet new console --framework net8.0
 ```
 
-We load the libraries/dependencies running these commands:
+We load the libraries/dependencies running these commands
+
+To load the library: **Azure.Identity**
+
+https://www.nuget.org/packages/Azure.Identity
 
 ```
 dotnet add package Azure.Identity --version 1.10.4
 ```
 
-To load the library: Azure.ResourceManager 
+To load the library: **Azure.ResourceManager** 
 
 https://www.nuget.org/packages/Azure.ResourceManager
 
