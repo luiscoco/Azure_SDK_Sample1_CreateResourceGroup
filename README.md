@@ -3,6 +3,8 @@
 **NOTE:**
 For general infor about Azure SDK for .NET navigate to the following github repo: https://github.com/Azure/azure-sdk-for-net
 
+## 1. Open VSCode and create a new C# console application with .NET 8
+
 We first create the folder/directory where to place our console applicaton.
 
 ```
@@ -27,6 +29,8 @@ We create a .NET 8 console application with the command:
 dotnet new console --framework net8.0
 ```
 
+## 2. Load the dependencies
+
 We load the libraries/dependencies running these commands
 
 To load the library: **Azure.Identity**
@@ -45,11 +49,29 @@ https://www.nuget.org/packages/Azure.ResourceManager
 dotnet add package Azure.ResourceManager --version 1.9.0
 ```
 
+For loading the library: **Azure.ResourceManager.Resources**
+
+https://www.nuget.org/packages/Azure.ResourceManager.Resources
+
+```
+dotnet add package Azure.ResourceManager.Resources --version 1.7.0
+```
+
+Finally we load the library **Azure.ResourceManager.Storage**
+
+https://www.nuget.org/packages/Azure.ResourceManager.Storage/1.2.0-beta.2
+
+```
+dotnet add package Azure.ResourceManager.Storage --version 1.2.0-beta.2
+```
+
 After installing the libraries we run the command:
 
 ```
 dotnet restore
 ```
+
+## 3. We input the application C# source code
 
 We open the **program.cs** file and we input the application source code:
 
@@ -73,11 +95,15 @@ ResourceGroupResource resourceGroup = operation.Value;
 Console.WriteLine(resourceGroup.Data.Name);
 ```
 
+## 4. Build and run the application
+
 For executing the application we run the command:
 
 ```
 dotnet run
 ```
+
+## 5. See the created Resource Group in Azure portal 
 
 After creating a new Resource Group we see the following picture:
 
