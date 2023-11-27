@@ -1,10 +1,10 @@
 # How to create an Azure Resource Group with a .NET 8 console application and Azure SDK for .NET 
 
-## 0. Prerequisite
+## 0. Prerequisites
 
 1. Create an **Azure Free account**: https://azure.microsoft.com/en-us/free
 
-2. Install Azure CLI on Windows: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli
+2. Install **Azure CLI** on Windows: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli
 
 3. Confirme the Azure CLI installation running this command:
 
@@ -14,8 +14,35 @@ az account show
 
 ![image](https://github.com/luiscoco/Azure_SDK_Sample1_CreateResourceGroup/assets/32194879/da5e76a3-ad3a-4b33-a8da-59b179a43a86)
 
+For upgrading Azure CLI run the following command:
+
+```
+az upgrade
+```
+
+To check the current Azure CLI version run the command:
+
+```
+az --version
+```
+
+To loggin in Azure run the command:
+
+```
+az login
+```
+
+![image](https://github.com/luiscoco/Azure_SDK_Sample2_CreateStorageAccount/assets/32194879/493bc6a4-5e11-4069-9cba-9cad96e6f7d1)
+
+
+Instead of constantly typing a location as "**euwest**" or a resource group name as "**Luis-RG**" for the commands I am running, I can set these as defaults in my session using the following command:
+
+```
+az configure --defaults location=euwest group=luis-RG
+```
+
 **NOTE:**
-For general infor about Azure SDK for .NET navigate to the following github repo: https://github.com/Azure/azure-sdk-for-net
+For general info about Azure SDK for .NET navigate to the following github repo: https://github.com/Azure/azure-sdk-for-net
 
 ## 1. Open VSCode and create a new C# console application with .NET 8
 
