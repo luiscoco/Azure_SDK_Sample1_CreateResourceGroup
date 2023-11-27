@@ -114,6 +114,46 @@ dotnet restore
 
 ## 3. We input the application C# source code
 
+## 3.1. Load the libraries
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Azure.Identity;
+using Azure;
+using Azure.Core;
+using Azure.ResourceManager;
+using Azure.ResourceManager.Resources;
+using Azure.ResourceManager.Storage.Models;
+```
+
+## 3.2. Create ARM (Azure Resources Management) client.
+
+When you first create your ARM client, choose the subscription you're going to work in.
+
+There's a convenient DefaultSubscription property that returns the default subscription configured for your user:
+
+```csharp
+ArmClient armClient = new ArmClient(new DefaultAzureCredential());
+SubscriptionResource subscription = await armClient.GetDefaultSubscriptionAsync();
+```
+
+This is a scoped operations object, and any operations you perform will be done under that subscription.
+
+From this object, you have access to all children via collection objects. Or you can access individual children by ID.
+
+## 3.3. Create or update the Azure ResourceGroup
+
+```csharp
+string rgName = "myRgNameLUISCOCO";
+AzureLocation location = AzureLocation.WestEurope;
+ArmOperation<ResourceGroupResource> operation = await subscription.GetResourceGroups().CreateOrUpdateAsync(WaitUntil.Completed, rgName, new ResourceGroupData(location));
+ResourceGroupResource resourceGroup = operation.Value;
+Console.WriteLine(resourceGroup.Data.Name);
+```
+
+## 3.4. Source code
+
 We open the **program.cs** file and we input the application source code:
 
 ```csharp
