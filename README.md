@@ -1,5 +1,8 @@
 # How to create an Azure Resource Group with a .NET 8 console application and Azure SDK for .NET 
 
+**NOTE:**
+For general info about Azure SDK for .NET navigate to the following github repo: https://github.com/Azure/azure-sdk-for-net
+
 ## 0. Prerequisites
 
 1. Create an **Azure Free account**: https://azure.microsoft.com/en-us/free
@@ -40,9 +43,6 @@ Instead of constantly typing a location as "**euwest**" or a resource group name
 ```
 az configure --defaults location=euwest group=luis-RG
 ```
-
-**NOTE:**
-For general info about Azure SDK for .NET navigate to the following github repo: https://github.com/Azure/azure-sdk-for-net
 
 ## 1. Open VSCode and create a new C# console application with .NET 8
 
